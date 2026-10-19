@@ -8,10 +8,11 @@ function Main() {
     return (
         <>
             <Search setDrinks={setDrinks} />
-            {/* <div style={{ display: 'flex', flexWrap: 'wrap' }}> */}
+            <div style={{ display: 'flex', flexWrap: 'wrap' }}>
             {drinks.map((drink) => (
                 <Cards key={drink.idDrink} drink={drink} />
             ))}
+            </div>
         </>
     )
 }

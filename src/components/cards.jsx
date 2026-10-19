@@ -1,6 +1,4 @@
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import Api from '../api.js'
 
 
 function Cards({ drink }) {
