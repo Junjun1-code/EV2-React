@@ -1,25 +1,15 @@
-import { useState, useEffect } from "react";
-function api(parameter){
-  const [info, setInfo] = useState("");
+export async function Api(parametro = "", texto = "") {
+  const query = `${parametro}${texto}`;
+  const url = `https://www.thecocktaildb.com/api/json/v1/1/${query}`;
 
-  const consultarApi = async () => {
-    const url = `https://www.thecocktaildb.com/api/json/v1/1/${parameter}`;
-    const response = await fetch(url);
+  const response = await fetch(url);
 
-    if (!response.ok) {
-      throw new Error(`Error HTTP: ${response.status}`);
-    }
-    const data = await response.json();
-    setInfo(`${data.quote} - ${data.author}`);
-  };
+  if (!response.ok) {
+    throw new Error(`Error HTTP: ${response.status}`);
+  }
 
-  useEffect(() => {
-    consultarApi();
-  }, []);
-
-  return (
-    info
-  );
+  const data = await response.json();
+  return data.drinks || [];
 }
 
-export default api
+export default Api;

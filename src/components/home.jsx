@@ -1,15 +1,16 @@
-import api from '../api.js'
+import Api from '../api.js'
 
-function lobby(){
+function home(){
 
     return (
         <>
-            <h2> Top bebidas </h2>
+            <h2> Estas son nuestras bebidas más populares </h2>
             {/* Recordar cambiar unicamente al momento de entrega */}
             {/* api("popular.php") */}
+
         </>
     )
 }
 
 
-export default lobby
+export default home
